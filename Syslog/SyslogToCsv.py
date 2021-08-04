@@ -2,7 +2,7 @@ import glob
 import csv
 from typing import List
 
-Filenames = glob.glob("Syslog*.txt")
+Filenames = glob.glob("Syslog\\RawData\\Syslog*.txt")
 # Nested Lists which will store data to be written to the CSV Files
 Data = []
 SpywareData = []
@@ -53,7 +53,7 @@ WebSecurityHeader = [
     "User Name", "Client Host Name", "Process Name", "Web Reputation Rating",
     "Severity Level"
 ]
-Header = ["Log Generation Date","Appliance Vendor", "Appliance Product", "Appliance Version","Event Name", "Event ID", "Severity"]
+Header = ["Log Generation Date","Service Facility","IPv4 Address","Appliance Vendor", "Appliance Product", "Appliance Version","Event Name", "Event ID", "Severity"]
 
 
 def WriteCsv(filename, header, DataList):
@@ -528,39 +528,34 @@ def NetworkContent(split_line):
         temp = temp[temp.find("=") + 1:]
         Result.append(temp)
     NetworkData.append(Result)
-    Data.append(split_line[:-1])
-
 
 def ParseContent(content):
     """
     Parse the content of a single file line by line
     """
+    
     for line in content:
-        split_line = line.strip().split("|")
-        Result = list()
-        Result.append(split_line[0][0:20].strip())
-        # Result.append(split_line[0][20:split_line[0].find("\t")])
-       
-        # #.append(split_line[0][0:20])
-        Result.extend(split_line[1:-1])
-        # Data.append(Result)
-       
-        print(Result)
-        Data.append(Result)
-        if split_line[4][0:3] == "AV:":
-            Virus(split_line)
-        elif split_line[4] == "700107":
-            DeviceAccess(split_line)
-        elif split_line[4] == "Spyware Detected":
-            Spyware(split_line)
-        elif split_line[4][0:4] == "CnC:":
-            CallBack(split_line)
-        elif split_line[4][0:2] == "WB":
-            WebSecurity(split_line)
-        elif split_line[4][0:3] == "BM:":
-            BehaviourMonitoring(split_line)
-        if split_line[4][0:5] == "NCIE:":
-            NetworkContent(split_line)
+        split_pipe = line.strip().split("|")
+        split_tab = split_pipe[0].strip().split("\t")
+        LogHead = split_pipe[1:-1]
+        split_tab.pop(3)
+        split_tab.extend(LogHead)    
+        Data.append(split_tab)
+    
+        if split_pipe[4][0:3] == "AV:":
+            Virus(split_pipe)
+        elif split_pipe[4] == "700107":
+            DeviceAccess(split_pipe)
+        elif split_pipe[4] == "Spyware Detected":
+            Spyware(split_pipe)
+        elif split_pipe[4][0:4] == "CnC:":
+            CallBack(split_pipe)
+        elif split_pipe[4][0:2] == "WB":
+            WebSecurity(split_pipe)
+        elif split_pipe[4][0:3] == "BM:":
+            BehaviourMonitoring(split_pipe)
+        elif split_pipe[4][0:5] == "NCIE:":
+            NetworkContent(split_pipe)
 
 
 def ReadSyslog(filename):
@@ -577,13 +572,14 @@ for filename in Filenames:
     """
     Iterate through all the log files in the present working directory.
     """
+    
     ReadSyslog(filename)
 
-# WriteCsv("WebSecurity.csv", WebSecurityHeader, WebsecurityData)
-# WriteCsv("Virus.csv", VirusHeader, VirusData)
-# WriteCsv("Callback.csv", CallbackHeader, CallbackData)
-# WriteCsv("Behaviour.csv", BehaviourMonitoringHeader, BehaviourData)
-# WriteCsv("Spyware.csv", SypwareHeaderData, SpywareData)
-# WriteCsv("Network.csv", NetworkHeader, NetworkData)
-# WriteCsv("Device.csv", DeviceHeader, DeviceData)
-WriteCsv("Syslog.csv",Header,Data)
+WriteCsv("Syslog\\ProcessedData\\WebSecurity.csv", WebSecurityHeader, WebsecurityData)
+WriteCsv("Syslog\\ProcessedData\\Virus.csv", VirusHeader, VirusData)
+WriteCsv("Syslog\\ProcessedData\\Callback.csv", CallbackHeader, CallbackData)
+WriteCsv("Syslog\\ProcessedData\\Behaviour.csv", BehaviourMonitoringHeader, BehaviourData)
+WriteCsv("Syslog\\ProcessedData\\Spyware.csv", SypwareHeaderData, SpywareData)
+WriteCsv('Syslog\\ProcessedData\\Network.csv', NetworkHeader, NetworkData)
+WriteCsv("Syslog\\ProcessedData\\Device.csv", DeviceHeader, DeviceData)
+WriteCsv("Syslog\\ProcessedData\\Syslog.csv",Header,Data)
