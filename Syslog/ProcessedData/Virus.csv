@@ -1,0 +1,3 @@
+Event Name,Device External ID,Log Generation Date,Number of Detections,Endpoint,Action,Second Action,Scan Type,Reason Code,First Action Result,Second Action Result,Severity Code,File Name,File Path,Endpoint IPv4 address
+Virus,3856,Jul 15 2020 05:19:32 GMT+00:00,1,AHMED,File cleaned,1,Real-time Scan,virus log,File cleaned,N/A,2,Riched32.dll,C:\\Windows\\SysWOW64\\pt-BR\\S-1-4-82\\,192.168.6.25
+Virus,3857,Jul 15 2020 10:59:58 GMT+00:00,1,WARDA-INTERNSND,File cleaned,1,Real-time Scan,virus log,File cleaned,N/A,2,oinstall.exe,"D:\\office_2016�?""19_c2r_iso_16.0.12026.20320_x64\\",10.5.0.67

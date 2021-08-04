@@ -1,0 +1,9 @@
+Event Name,Device External ID,Log Generation Date,Endpoint Host Name,Endpoint IPv4 Address,Domain Name,Action,Risk Level,Detection Source,Destination Format,Callback IPV4 address,Process Name
+Callback,5348,Jul 14 2020 11:37:12 GMT+00:00,AZMATAWAIS-PC,192.168.8.100,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5349,Jul 14 2020 11:38:12 GMT+00:00,AZMATAWAIS-PC,192.168.8.100,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5350,Jul 14 2020 11:41:23 GMT+00:00,WAHABAKRAM-PC,192.168.8.101,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5351,Jul 14 2020 11:42:23 GMT+00:00,WAHABAKRAM-PC,192.168.8.101,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5352,Jul 14 2020 12:39:23 GMT+00:00,WAHABAKRAM-PC,192.168.8.101,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5353,Jul 14 2020 12:40:23 GMT+00:00,WAHABAKRAM-PC,192.168.8.101,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5354,Jul 14 2020 12:50:37 GMT+00:00,AZMATAWAIS-PC,192.168.8.100,Workgroup,Block,3,1,1,192.168.8.103,System
+Callback,5355,Jul 14 2020 12:51:37 GMT+00:00,AZMATAWAIS-PC,192.168.8.100,Workgroup,Block,3,1,1,192.168.8.103,System

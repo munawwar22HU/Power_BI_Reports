@@ -1,0 +1,125 @@
+Log Generation Date,Service Facility,IPv4 Address,Appliance Vendor,Appliance Product,Appliance Version,Event Name,Event ID,Severity
+2020-07-14 15:03:52,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,WB:36,36,3
+2020-07-14 15:34:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:34:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 15:38:03,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 16:32:15,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 16:38:17,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 16:40:17,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 16:40:17,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 16:40:17,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 16:42:18,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 16:44:18,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 16:44:18,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 16:44:18,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:32:31,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-14 17:40:33,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 17:40:33,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 17:42:33,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 17:42:33,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 17:52:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 17:52:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,NCIE:Block,Suspicious Connection,3
+2020-07-14 17:52:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 17:52:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,CnC:Block,CnC Callback,3
+2020-07-14 18:10:40,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-14 19:40:59,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 00:02:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 00:02:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 00:02:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 00:02:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 07:57:51,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 07:57:51,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 09:22:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 09:22:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 09:22:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 09:22:36,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 10:22:51,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,AV:File cleaned,TROJ_GEN.R002C0WGF20,3
+2020-07-15 10:44:58,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 10:59:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 10:59:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 10:59:01,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:07:04,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:11:05,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:17:06,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 11:17:06,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 11:39:10,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,BM:3,Behavior Monitoring,3
+2020-07-15 13:55:45,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 14:11:50,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 14:43:56,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,BM:3,Behavior Monitoring,3
+2020-07-15 15:12:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 15:12:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 15:12:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 15:12:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 15:12:02,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 15:36:08,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 16:02:15,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,AV:File cleaned,TROJ_GEN.R002C0PFF20,3
+2020-07-15 16:04:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,Spyware Detected,Spyware Detected,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
+2020-07-15 16:08:16,Local0.Notice,52.173.188.138,Trend Micro,Apex Central,2019,700107,Device Access Control,3
