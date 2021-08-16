@@ -2,11 +2,12 @@
 import glob
 import csv
 import sys
+
 # Get FilePath
 BASEPATH = "C:\PowerBI\Power_BI_Reports\DeepSecurity\SyslogCatchAll-"
-#DATE = "2021-08-04"
+# DATE = "2021-08-04"
 DATE = sys.argv[1]
-FILENAME = BASEPATH+DATE+".txt"
+FILENAME = BASEPATH + DATE + ".txt"
 # Read file into a Datum List.
 Datum = list()
 File = open(FILENAME)
@@ -16,7 +17,7 @@ Datum.extend(File.readlines())
 
 
 def WriteContent(Data, filename, header):
-    with open(filename, "w", newline='') as f:
+    with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
         if header != None:
             writer.writerow(header)
@@ -27,10 +28,10 @@ def WriteContent(Data, filename, header):
 def GenerateRow(IndexKeys, Extension, Data):
     Indexes = list(IndexKeys.values())
     for index in range(1, len(Indexes)):
-        temp = Extension[Indexes[index - 1]:Indexes[index]].strip()
-        Data.append(temp[temp.find("=")+1:])
-    temp = Extension[Indexes[-1]:].strip()
-    Data.append(temp[temp.find("=")+1:])
+        temp = Extension[Indexes[index - 1] : Indexes[index]].strip()
+        Data.append(temp[temp.find("=") + 1 :])
+    temp = Extension[Indexes[-1] :].strip()
+    Data.append(temp[temp.find("=") + 1 :])
     return Data
 
 
@@ -38,10 +39,19 @@ def GenerateRow(IndexKeys, Extension, Data):
 CustomLog = list()
 IntegrityMonitoring = list()
 LogInspection = list()
+Firewall = list()
+Malware = list()
 Result = list()
 Global = list()
-IdKeys = {"Syslog": 0, "SystemEvent": 0, "CustomLog": 0,
-          "LogInspection": 0, "IntegrityMonitoring": 0}
+IdKeys = {
+    "Syslog": 0,
+    "SystemEvent": 0,
+    "CustomLog": 0,
+    "LogInspection": 0,
+    "IntegrityMonitoring": 0,
+    "Firewall": 0,
+    "Malware": 0,
+}
 #################################################
 for line in Datum:
     GlobalData = list()
@@ -54,7 +64,7 @@ for line in Datum:
     HeaderSplit = Header.split("\t")
     # Extract Log Generation Date
     value = HeaderSplit[0]
-    value = value[0:value.find("TMDSSERVER")].strip()
+    value = value[0 : value.find("TMDSSERVER")].strip()
 
     # Common Fields that are present in all logs
     # ["Receiving Time","Generated Time","Service Facility","IPv4 Address","DeviceVendor","DeviceProduct","DeviceVersion","SignatureID","Name","Severity"]
@@ -78,10 +88,8 @@ for line in Datum:
             IndexKeys["cn1"] = Extension.find("cn1=")
             IndexKeys["cn1Label"] = Extension.find("cn1Label=")
             IndexKeys["dvc"] = Extension.find("dvc")
-            IndexKeys["TrendMicroDsTenant"] = Extension.find(
-                "TrendMicroDsTenant")
-            IndexKeys["TrendMicroDsTenantId"] = Extension.find(
-                "TrendMicroDsTenantId")
+            IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant")
+            IndexKeys["TrendMicroDsTenantId"] = Extension.find("TrendMicroDsTenantId")
             IndexKeys["cs1"] = Extension.find("cs1=")
             IndexKeys["cs1Label"] = Extension.find("cs1Label=")
             IndexKeys["fname"] = Extension.find("fname=")
@@ -95,15 +103,45 @@ for line in Datum:
             Data = GenerateRow(IndexKeys, Extension, Data)
             CustomLog.append(Data)
 
+        elif 100 <= SignatureID <= 199:
+            IndexKeys["cn1"] = Extension.find("cn1=")
+            IndexKeys["cn1Label"] = Extension.find("cn1Label=")
+            IndexKeys["dvc"] = Extension.find("dvc")
+            IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant")
+            IndexKeys["TrendMicroDsTenantId"] = Extension.find("TrendMicroDsTenantId")
+            IndexKeys["act"] = Extension.find("act")
+            IndexKeys["dmac"] = Extension.find("dmac")
+            IndexKeys["smac"] = Extension.find("smac")
+            IndexKeys["TrendMicroDsFrameType"] = Extension.find("TrendMicroDsFrameType")
+            IndexKeys["src"] = Extension.find("src")
+            IndexKeys["dst"] = Extension.find("dst")
+            IndexKeys["in"] = Extension.find("in")
+            IndexKeys["cs3"] = Extension.find("cs3")
+            IndexKeys["cs3Label"] = Extension.find("cs3Label")
+            IndexKeys["proto"] = Extension.find("proto")
+            IndexKeys["spt"] = Extension.find("spt")
+            IndexKeys["dpt"] = Extension.find("dpt")
+            IndexKeys["cs2"] = Extension.find("cs2")
+            IndexKeys["cs2Label"] = Extension.find("cs2Label")
+            IndexKeys["cnt"] = Extension.find("cnt")
+
+            if IndexKeys["cs3"] == -1:
+                IndexKeys["cs3"] = IndexKeys["proto"]
+                IndexKeys["cs3Label"] = IndexKeys["proto"]
+
+            Data.append(IdKeys["Firewall"])
+            GlobalData.append(IdKeys["Firewall"])
+            IdKeys["Firewall"] += 1
+            Data = GenerateRow(IndexKeys, Extension, Data)
+            Firewall.append(Data)
+
         elif 2000000 <= SignatureID <= 2999999:
             IndexKeys = dict()
             IndexKeys["cn1"] = Extension.find("cn1=")
             IndexKeys["cn1Label"] = Extension.find("cn1Label=")
             IndexKeys["dvc"] = Extension.find("dvc")
-            IndexKeys["TrendMicroDsTenant"] = Extension.find(
-                "TrendMicroDsTenant")
-            IndexKeys["TrendMicroDsTenantId"] = Extension.find(
-                "TrendMicroDsTenantId")
+            IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant")
+            IndexKeys["TrendMicroDsTenantId"] = Extension.find("TrendMicroDsTenantId")
             IndexKeys["act"] = Extension.find("act")
             IndexKeys["filePath"] = Extension.find("filePath")
             IndexKeys["suser"] = Extension.find("suser")
@@ -117,20 +155,20 @@ for line in Datum:
             IntegrityMonitoring.append(Data)
 
         elif 3000000 <= SignatureID <= 3999999:
-            IndexKeys = dict()
             IndexKeys["cn1"] = Extension.find("cn1=")
             IndexKeys["cn1Label"] = Extension.find("cn1Label=")
             IndexKeys["dvc"] = Extension.find("dvc=")
-            IndexKeys["TrendMicroDsTenant"] = Extension.find(
-                "TrendMicroDsTenant=")
-            IndexKeys["TrendMicroDsTenantId"] = Extension.find(
-                "TrendMicroDsTenantId=")
+            IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant=")
+            IndexKeys["TrendMicroDsTenantId"] = Extension.find("TrendMicroDsTenantId=")
             IndexKeys["cs1"] = Extension.find("cs1=")
             IndexKeys["cs1Label"] = Extension.find("cs1Label=")
             IndexKeys["fname"] = Extension.find("fname=")
+            IndexKeys["src"] = Extension.find("src")
             IndexKeys["duser"] = Extension.find("duser=")
             IndexKeys["shost"] = Extension.find("shost=")
             IndexKeys["msg"] = Extension.find("msg=")
+            if IndexKeys["src"] == -1:
+                IndexKeys["src"] = IndexKeys["duser"]
             Indexes = list(IndexKeys.values())
 
             Data.append(IdKeys["LogInspection"])
@@ -138,14 +176,30 @@ for line in Datum:
             IdKeys["LogInspection"] += 1
             Data = GenerateRow(IndexKeys, Extension, Data)
             LogInspection.append(Data)
+        elif 4000000 <= SignatureID <= 4999999:
+            IndexKeys["cn1"] = Extension.find("cn1")
+            IndexKeys["cn1Label"] = Extension.find("cn1Label")
+            IndexKeys["dvc"] = Extension.find("dvc")
+            IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant")
+            IndexKeys["TrendMicroDsTenantId"] = Extension.find("TrendMicroDsTenantId")
+            IndexKeys["filePath"] = Extension.find("filePath")
+            IndexKeys["act"] = Extension.find("act")
+            IndexKeys["result"] = Extension.find("result")
+            IndexKeys["msg"] = Extension.find("msg")
+            IndexKeys["TrendMicroDsFileSHA1"] = Extension.find("TrendMicroDsFileSHA1")
+
+            Data.append(IdKeys["Malware"])
+            GlobalData.append(IdKeys["Malware"])
+            IdKeys["Malware"] += 1
+            Data = GenerateRow(IndexKeys, Extension, Data)
+            Malware.append(Data)
     else:
         IndexKeys["src"] = Extension.find("src")
         IndexKeys["suser"] = Extension.find("suser")
         IndexKeys["target"] = Extension.find("target")
         IndexKeys["msg"] = Extension.find("msg")
         IndexKeys["TrendMicroDsTenant"] = Extension.find("TrendMicroDsTenant")
-        IndexKeys["TrendMicroDsTenantID"] = Extension.find(
-            "TrendMicroDsTenantId")
+        IndexKeys["TrendMicroDsTenantID"] = Extension.find("TrendMicroDsTenantId")
 
         if IndexKeys["target"] == -1:
             IndexKeys["target"] = IndexKeys["msg"]
@@ -158,29 +212,145 @@ for line in Datum:
     Global.append(GlobalData)
 
 # System Event
-Header = ["Id", "src", "suser", "target", "msg",
-          "TrendMicroDsTenant", "TrendMicroDsTenantId"]
+Header = [
+    "Id",
+    "src",
+    "suser",
+    "target",
+    "msg",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+]
 WriteContent(
-    Result, "C:\PowerBI\Power_BI_Reports\DeepSecurity\SystemEvents-"+DATE+".csv", Header)
+    Result,
+    "C:\PowerBI\Power_BI_Reports\DeepSecurity\SystemEvents-" + DATE + ".csv",
+    Header,
+)
 
 # Integrity Monitoring
-IntegrityMonitoringHeader = ["Id", "Host ID", "Host ID Label", "Dvc",
-                             "TrendMicroDsTenant", "TrendMicroDsTenantId", "Act", "filePath", "suser", "sproc", "msg"]
-WriteContent(IntegrityMonitoring,
-             "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\IntegrityMonitoring-"+DATE+".csv", IntegrityMonitoringHeader)
-# Custom Log
-CustomLogHeader = ["Id", "Host ID", "Host ID Label", "dvc", "TrendMicroDsTenant",
-                   "TrendMicroDsTenantId", "LI Description", "LI Description Label", "fname", "duser", "shost", "msg"]
+IntegrityMonitoringHeader = [
+    "Id",
+    "Host ID",
+    "Host ID Label",
+    "Dvc",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+    "Act",
+    "filePath",
+    "suser",
+    "sproc",
+    "msg",
+]
 WriteContent(
-    CustomLog, "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\CustomLog-"+DATE+".csv", CustomLogHeader)
+    IntegrityMonitoring,
+    "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\IntegrityMonitoring-" + DATE + ".csv",
+    IntegrityMonitoringHeader,
+)
+# Custom Log
+CustomLogHeader = [
+    "Id",
+    "Host ID",
+    "Host ID Label",
+    "dvc",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+    "LI Description",
+    "LI Description Label",
+    "fname",
+    "duser",
+    "shost",
+    "msg",
+]
+WriteContent(
+    CustomLog,
+    "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\CustomLog-" + DATE + ".csv",
+    CustomLogHeader,
+)
 
 # Log Inspection
-LogInspectionHeader = ["Id", "Host ID", "Host ID Label", "dvc", "TrendMicroDsTenant",
-                       "TrendMicroDsTenantId", "LI Description", "LI Description Label", "fname", "duser", "shost", "msg"]
-WriteContent(LogInspection,
-             "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\LogInspection-"+DATE+".csv", LogInspectionHeader)
+LogInspectionHeader = [
+    "Id",
+    "Host ID",
+    "Host ID Label",
+    "dvc",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+    "LI Description",
+    "LI Description Label",
+    "fname",
+    "src",
+    "duser",
+    "shost",
+    "msg",
+]
+WriteContent(
+    LogInspection,
+    "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\LogInspection-" + DATE + ".csv",
+    LogInspectionHeader,
+)
 # Global Syslog
 
-Header = ["Id", "Receiving Time", "Generated Time", "Service Facility", "IPv4 Address",
-    "DeviceVendor", "DeviceProduct", "DeviceVersion", "SignatureID", "Name", "Severity", "EventId"]
-WriteContent(Global, "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\Global-"+DATE+".csv", Header)
+Header = [
+    "Id",
+    "Receiving Time",
+    "Generated Time",
+    "Service Facility",
+    "IPv4 Address",
+    "DeviceVendor",
+    "DeviceProduct",
+    "DeviceVersion",
+    "SignatureID",
+    "Name",
+    "Severity",
+    "EventId",
+]
+WriteContent(
+    Global,
+    "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\Global-" + DATE + ".csv",
+    Header,
+)
+
+# Firewall
+FirewallHeader = [
+    "Id",
+    "Host ID",
+    "Host ID Label",
+    "dvc",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+    "act",
+    "smac",
+    "dmac",
+    "TrendMicroDsFrameType",
+    "src",
+    "dst",
+    "in",
+    "cs3",
+    "cs3Label",
+    "proto",
+    "spt",
+    "dpt",
+    "cs2",
+    "cs2Label",
+    "cnt",
+]
+WriteContent(
+    Firewall, "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\Firewall-"+DATE+".csv", FirewallHeader
+)
+# Malware
+MalwareHeader = [
+    "Id",
+    "Host ID",
+    "Host ID Label",
+    "dvc",
+    "TrendMicroDsTenant",
+    "TrendMicroDsTenantId",
+    "filePath",
+    "act",
+    "result",
+    "msg",
+    "TrendMicroDsFileSHA1",
+]
+WriteContent(
+    Malware, "C:\\PowerBI\\Power_BI_Reports\DeepSecurity\\Malware-"+DATE+".csv", MalwareHeader
+)
